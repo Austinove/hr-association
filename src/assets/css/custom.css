@@ -1,0 +1,77 @@
+body {
+    font-family: Verdana,sans-serif !important;
+}
+.custom-nav > .nav-item > .nav-link, .navlink-dropdown {
+    opacity: 1 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #333533 !important;
+    text-transform: capitalize !important;
+}
+.navbar-translate > .custom-brand {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.scroll-height {
+    height: 60px !important;
+}
+.custom-container {
+    display: contents !important;
+}
+
+/* footer css */
+footer {
+    background-color: #303030 !important;
+}
+.footer-ul {
+    list-style-type: none;
+}
+.inner-ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    color: #bfbebe;
+}
+.inner-ul > li {
+    margin-bottom: -20px;
+}
+.footer-head {
+    color: #ffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.inner-ul > li {
+    display: flex;
+}
+.fa-custom {
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  color: #3B5998;
+}
+
+.fa-twitter {
+  color: #55ACEE;
+}
+
+.fa-linkedin {
+  color: #007bb5;
+}
+.has-success > .footer-input {
+    background-color: transparent;
+}
+.carousel-custom {
+    height: 100%;
+    width: 100%;
+}
+.page-header {
+    min-height: 75vh !important;
+}
