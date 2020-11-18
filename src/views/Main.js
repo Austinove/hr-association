@@ -10,7 +10,7 @@ import Membership from "./membership";
 import News from "./news";
 import Knowledge from "./knowledge";
 import Application from "./application";
-function Main() {
+const  App = () => {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("Main");
@@ -24,23 +24,31 @@ function Main() {
         <PageNavbar />
         <PageHeader />
         <Switch>
-          <Route path="/" render={(props) => <HomePage {...props} />} />
-          <Route path="/about" render={(props) => <AboutUs {...props} />} />
+          <Route path="/" exact render={(props) => <HomePage {...props} />} />
+          <Route
+            path="/about"
+            exact
+            render={(props) => <AboutUs {...props} />}
+          />
           <Route
             path="/leadership"
+            exact
             render={(props) => <Leadership {...props} />}
           />
           <Route
             path="/membership"
+            exact
             render={(props) => <Membership {...props} />}
           />
-          <Route path="/news" render={(props) => <News {...props} />} />
+          <Route path="/news" exact render={(props) => <News {...props} />} />
           <Route
             path="/knowledge"
+            exact
             render={(props) => <Knowledge {...props} />}
           />
           <Route
             path="/application"
+            exact
             render={(props) => <Application {...props} />}
           />
           <Redirect to="/" />
@@ -51,4 +59,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default App;

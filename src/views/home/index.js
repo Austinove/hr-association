@@ -1,19 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
+  NavLink,
   Container,
   Row,
   Col,
+  ListGroup,
+  ListGroupItem,
+  ListGroupItemHeading,
+  ListGroupItemText,
 } from "reactstrap";
+import knowledge from "assets/img/logo/knowledge.png";
+import target from "assets/img/logo/target.png";
+import change from "assets/img/logo/change-2.png";
+import homeImage from "assets/img/logo/home-img.jpg";
 
 function HomePage() {
   document.documentElement.classList.remove("nav-open");
@@ -26,321 +27,176 @@ function HomePage() {
   return (
     <>
       <div className="main">
-        <div className="section text-left">
+        <div className="section text-left top-section">
           <Container>
             <Row>
-              <Col className="ml-auto mr-auto" md="6">
-                <h2 className="title">Let's talk product</h2>
-                <h5 className="description">
-                  This is the paragraph where you can write more details about
-                  your product. Keep you user engaged by providing meaningful
-                  information. Remember that by this time, the user is curious,
-                  otherwise he wouldn't scroll to get here. Add a button if you
-                  want the user to see more.
+              <Col className="mx-auto" md="4">
+                <h2 className="custom-title">What we do</h2>
+                <h5 className="custom-description">
+                  We strive to be a leading Professional association in People
+                  management that enhances competence productivity and quality
+                  of life. Our mission is to institute standards, enhance
+                  development and promote human resource management as a
+                  strategic function in any organization.
                 </h5>
-                <br />
-                <Button
-                  className="btn-round"
-                  color="info"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}>
-                  See Details
-                </Button>
               </Col>
-              <Col className="ml-auto mr-auto" md="6">
-                <h2 className="title">Let's talk product</h2>
-                <h5 className="description">
-                  This is the paragraph where you can write more details about
-                  your product. Keep you user engaged by providing meaningful
-                  information. Remember that by this time, the user is curious,
-                  otherwise he wouldn't scroll to get here. Add a button if you
-                  want the user to see more.
-                </h5>
-                <br />
-                <Button
-                  className="btn-round"
-                  color="info"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}>
-                  See Details
-                </Button>
-              </Col>
-            </Row>
-            <br />
-            <br />
-            <Row>
-              <Col md="3">
-                <div className="info">
-                  <div className="icon icon-info">
-                    <i className="nc-icon nc-album-2" />
-                  </div>
-                  <div className="description">
-                    <h4 className="info-title">Beautiful Gallery</h4>
-                    <p className="description">
-                      Spend your time generating new ideas. You don't have to
-                      think of implementing.
-                    </p>
-                    <Button className="btn-link" color="info" href="#pablo">
-                      See more
+              <Col md={8}>
+                <Row>
+                  <Col className="mx-auto text-center" md="4">
+                    <img
+                      className="img-circle img-no-padding img-responsive"
+                      src={knowledge}
+                      alt="knowledge"
+                    />
+                    <h2 className="sub-title">Knowledgable</h2>
+                    <h5 className="custom-description">
+                      Advancing knowledge and understanding about people
+                      management and development
+                    </h5>
+                    <br />
+                    <Button
+                      className="btn-link text-info text-capitalize font-weight-normal"
+                      color="primary"
+                      outline>
+                      Our objectives{" "}
+                      <i class="fa fa-caret-right" aria-hidden="true"></i>
                     </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col md="3">
-                <div className="info">
-                  <div className="icon icon-info">
-                    <i className="nc-icon nc-bulb-63" />
-                  </div>
-                  <div className="description">
-                    <h4 className="info-title">New Ideas</h4>
-                    <p>
-                      Larger, yet dramatically thinner. More powerful, but
-                      remarkably power efficient.
-                    </p>
-                    <Button className="btn-link" color="info" href="#pablo">
-                      See more
+                  </Col>
+                  <Col className="mx-auto text-center" md="4">
+                    <img
+                      className="img-circle img-no-padding img-responsive"
+                      src={target}
+                      alt="settings"
+                    />
+                    <h2 className="sub-title">Setting Standards</h2>
+                    <h5 className="custom-description">
+                      Providing guidance and direction for the future of the
+                      people profession
+                    </h5>
+                    <br />
+                    <Button
+                      className="btn-link text-info text-capitalize font-weight-normal"
+                      color="primary"
+                      outline>
+                      Explore resources{" "}
+                      <i class="fa fa-caret-right" aria-hidden="true"></i>
                     </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col md="3">
-                <div className="info">
-                  <div className="icon icon-info">
-                    <i className="nc-icon nc-chart-bar-32" />
-                  </div>
-                  <div className="description">
-                    <h4 className="info-title">Statistics</h4>
-                    <p>
-                      Choose from a veriety of many colors resembling sugar
-                      paper pastels.
-                    </p>
-                    <Button className="btn-link" color="info" href="#pablo">
-                      See more
+                  </Col>
+                  <Col className="mx-auto text-center" md="4">
+                    <img
+                      className="img-circle img-no-padding img-responsive"
+                      src={change}
+                      alt="change"
+                    />
+                    <h2 className="sub-title">Diving Change</h2>
+                    <h5 className="custom-description">
+                      Over 700 members making a difference in workspaces and
+                      lives every day
+                    </h5>
+                    <br />
+                    <Button
+                      className="btn-link text-info text-capitalize font-weight-normal"
+                      color="primary"
+                      outline>
+                      Read newsletter{" "}
+                      <i class="fa fa-caret-right" aria-hidden="true"></i>
                     </Button>
-                  </div>
-                </div>
-              </Col>
-              <Col md="3">
-                <div className="info">
-                  <div className="icon icon-info">
-                    <i className="nc-icon nc-sun-fog-29" />
-                  </div>
-                  <div className="description">
-                    <h4 className="info-title">Delightful design</h4>
-                    <p>
-                      Find unique and handmade delightful designs related items
-                      directly from our sellers.
-                    </p>
-                    <Button className="btn-link" color="info" href="#pablo">
-                      See more
-                    </Button>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Container>
         </div>
-        {/* <div className="section section-dark text-center">
+        <div className="section text-left bottom-section">
           <Container>
-            <h2 className="title">Let's talk about us</h2>
-            <Row>
-              <Col md="4">
-                <Card className="card-profile card-plain">
-                  <div className="card-avatar">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        src={require("assets/img/faces/clem-onojeghuo-3.jpg")}
-                      />
-                    </a>
-                  </div>
-                  <CardBody>
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <div className="author">
-                        <CardTitle tag="h4">Henry Ford</CardTitle>
-                        <h6 className="card-category">Product Manager</h6>
-                      </div>
-                    </a>
-                    <p className="card-description text-center">
-                      Teamwork is so important that it is virtually impossible
-                      for you to reach the heights of your capabilities or make
-                      the money that you want without becoming very good at it.
-                    </p>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button
-                      className="btn-just-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-google-plus" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-linkedin" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-profile card-plain">
-                  <div className="card-avatar">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        src={require("assets/img/faces/joe-gardner-2.jpg")}
-                      />
-                    </a>
-                  </div>
-                  <CardBody>
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <div className="author">
-                        <CardTitle tag="h4">Sophie West</CardTitle>
-                        <h6 className="card-category">Designer</h6>
-                      </div>
-                    </a>
-                    <p className="card-description text-center">
-                      A group becomes a team when each member is sure enough of
-                      himself and his contribution to praise the skill of the
-                      others. No one can whistle a symphony. It takes an
-                      orchestra to play it.
-                    </p>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button
-                      className="btn-just-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-google-plus" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-linkedin" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-profile card-plain">
-                  <div className="card-avatar">
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        src={require("assets/img/faces/erik-lucatero-2.jpg")}
-                      />
-                    </a>
-                  </div>
-                  <CardBody>
-                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                      <div className="author">
-                        <CardTitle tag="h4">Robert Orben</CardTitle>
-                        <h6 className="card-category">Developer</h6>
-                      </div>
-                    </a>
-                    <p className="card-description text-center">
-                      The strength of the team is each individual member. The
-                      strength of each member is the team. If you can laugh
-                      together, you can work together, silence isn’t golden,
-                      it’s deadly.
-                    </p>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button
-                      className="btn-just-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-google-plus" />
-                    </Button>
-                    <Button
-                      className="btn-just-icon btn-neutral ml-1"
-                      color="link"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}>
-                      <i className="fa fa-linkedin" />
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
+            <Row classList="mb-4">
+              <Row className="text-left d-block">
+                <h2 className="custom-title mt-2 mb-4">Updates</h2>
+              </Row>
+              <Row>
+                <Col md="4">
+                  <h5 className="info-title news-head text-center">
+                    Latest from our newsletter
+                  </h5>
+                  <NavLink className="news-link" to="/membership" tag={Link}>
+                    <img
+                      className="img-rounded img-no-padding img-responsive"
+                      src={homeImage}
+                      alt="knowledge"
+                    />
+                    <h2 className="mt-2">Knowledgable</h2>
+                    <h5 className="custom-description">
+                      Advancing knowledge and understanding about people
+                      management and development
+                    </h5>
+                  </NavLink>
+                </Col>
+                <Col md="4">
+                  <h5 className="info-title news-head text-center">
+                    Latest from our newsletter
+                  </h5>
+                  <ListGroup flush>
+                    <ListGroupItem className="transparent" tag="a" href="#">
+                      Advancing knowledge and understanding about people
+                      management and development
+                      <br />
+                      <span className="font-12 float-right font-italic">
+                        Date: 19/11/2020
+                      </span>
+                    </ListGroupItem>
+                    <ListGroupItem className="transparent" tag="a" href="#">
+                      Advancing knowledge and understanding about people
+                      management and development
+                      <br />
+                      <span className="font-12 float-right font-italic">
+                        Date: 19/11/2020
+                      </span>
+                    </ListGroupItem>
+                    <ListGroupItem className="transparent" tag="a" href="#">
+                      Advancing knowledge and understanding about people
+                      management and development
+                      <br />
+                      <span className="font-12 float-right font-italic">
+                        Date: 19/11/2020
+                      </span>
+                    </ListGroupItem>
+                  </ListGroup>
+                </Col>
+                <Col md="4">
+                  <h5 className="info-title news-head text-center">
+                    Regulation Tracker
+                  </h5>
+                  <ListGroup flush>
+                    <ListGroupItem className="transparent" tag="a" href="#">
+                      Advancing knowledge and understanding about people
+                      management and development
+                      <br />
+                      <span className="font-12 float-right font-italic">
+                        Date: 19/11/2020
+                      </span>
+                    </ListGroupItem>
+                    <ListGroupItem className="transparent" tag="a" href="#">
+                      Advancing knowledge and understanding about people
+                      management and development
+                      <br />
+                      <span className="font-12 float-right font-italic">
+                        Date: 19/11/2020
+                      </span>
+                    </ListGroupItem>
+                    <ListGroupItem className="transparent" tag="a" href="#">
+                      Advancing knowledge and understanding about people
+                      management and development
+                      <br />
+                      <span className="font-12 float-right font-italic">
+                        Date: 19/11/2020
+                      </span>
+                    </ListGroupItem>
+                  </ListGroup>
+                </Col>
+              </Row>
             </Row>
           </Container>
-        </div> */}
-        {/* <div className="section landing-section">
-          <Container>
-            <Row>
-              <Col className="ml-auto mr-auto" md="8">
-                <h2 className="text-center">Keep in touch?</h2>
-                <Form className="contact-form">
-                  <Row>
-                    <Col md="6">
-                      <label>Name</label>
-                      <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="nc-icon nc-single-02" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input placeholder="Name" type="text" />
-                      </InputGroup>
-                    </Col>
-                    <Col md="6">
-                      <label>Email</label>
-                      <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="nc-icon nc-email-85" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input placeholder="Email" type="text" />
-                      </InputGroup>
-                    </Col>
-                  </Row>
-                  <label>Message</label>
-                  <Input
-                    placeholder="Tell us your thoughts and feelings..."
-                    type="textarea"
-                    rows="4"
-                  />
-                  <Row>
-                    <Col className="ml-auto mr-auto" md="4">
-                      <Button className="btn-fill" color="danger" size="lg">
-                        Send Message
-                      </Button>
-                    </Col>
-                  </Row>
-                </Form>
-              </Col>
-            </Row>
-          </Container>
-        </div> */}
+        </div>
       </div>
     </>
   );
