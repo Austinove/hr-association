@@ -24,7 +24,7 @@ function Main() {
         <PageNavbar />
         <PageHeader />
         <Switch>
-          <Route path="/index" render={(props) => <HomePage {...props} />} />
+          <Route path="/" render={(props) => <HomePage {...props} />} />
           <Route path="/about" render={(props) => <AboutUs {...props} />} />
           <Route
             path="/leadership"
@@ -43,7 +43,7 @@ function Main() {
             path="/application"
             render={(props) => <Application {...props} />}
           />
-          <Redirect to="/index" />
+          <Redirect to="/" />
         </Switch>
         <PageFooter />
       </BrowserRouter>
