@@ -10,7 +10,7 @@ import Membership from "./membership";
 import News from "./news";
 import Knowledge from "./knowledge";
 import Application from "./application";
-const  App = () => {
+const App = () => {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("Main");
@@ -22,7 +22,6 @@ const  App = () => {
     <>
       <BrowserRouter>
         <PageNavbar />
-        <PageHeader />
         <Switch>
           <Route path="/" exact render={(props) => <HomePage {...props} />} />
           <Route
@@ -57,6 +56,6 @@ const  App = () => {
       </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;

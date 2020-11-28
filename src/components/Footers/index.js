@@ -84,7 +84,7 @@ function PageFooter() {
                   placeholder="Last Name"
                 />
               </FormGroup>
-              <FormGroup for="exampleEmail" className="has-success">
+              <FormGroup htmlFor="exampleEmail" className="has-success">
                 <Input
                   className="footer-input"
                   type="email"
@@ -115,7 +115,7 @@ function PageFooter() {
                   <img
                     src={client1}
                     height={100}
-                    class="rounded float-left"
+                    className="rounded float-left"
                     alt="client_logo"></img>
                 </a>
               </Col>
@@ -124,7 +124,7 @@ function PageFooter() {
                   <img
                     height={100}
                     src={client2}
-                    class="rounded float-left"
+                    className="rounded float-left"
                     alt="client_logo"></img>
                 </a>
               </Col>

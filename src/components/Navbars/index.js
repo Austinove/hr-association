@@ -39,7 +39,7 @@ function TopNavbar() {
         document.documentElement.scrollTop < 300 ||
         document.body.scrollTop < 300
       ) {
-        setNavbarColor("info");
+        setNavbarColor("");
       }
     };
 
@@ -84,7 +84,7 @@ function TopNavbar() {
             isOpen={navbarCollapse}>
             <Nav navbar className="custom-nav ml-auto">
               <NavItem>
-                <NavLink to="/index" tag={Link}>
+                <NavLink className="text-white" to="/index" tag={Link}>
                   {" "}
                   Home{" "}
                 </NavLink>
