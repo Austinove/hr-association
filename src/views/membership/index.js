@@ -19,7 +19,6 @@ const Membership = () => {
         </Container>
       </div>
       <div className="main">
-        {/* <div className="bg-img"></div> */}
         <div className="section pt-4 bg-white text-left">
           <Container>
             <Row>

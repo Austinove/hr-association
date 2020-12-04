@@ -344,3 +344,12 @@ form .Knowledge-inputs{
 .pub-forms h4 {
     color: #f5cb5c;
 }
+.reg-inputs {
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: 1px solid #f5cb5c !important;
+}
+.header-content{
+    display: contents;
+}
