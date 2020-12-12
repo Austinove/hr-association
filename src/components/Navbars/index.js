@@ -63,7 +63,7 @@ function TopNavbar() {
             <NavbarBrand
               className="custom-brand"
               data-placement="bottom"
-              to="/index"
+              to="/admin/dashboard"
               tag={Link}>
               <img src={Logo} height="60px" alt="Logo" />
             </NavbarBrand>

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import PageNavbar from "components/Navbars";
-import PageHeader from "components/Headers";
 import PageFooter from "components/Footers";
 import HomePage from "views/home";
 import AboutUs from "./about";
@@ -10,6 +9,7 @@ import Membership from "./membership";
 import News from "./news";
 import Knowledge from "./knowledge";
 import Application from "./application";
+
 const App = () => {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {

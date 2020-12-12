@@ -298,7 +298,6 @@ section p:first-child, .timer div:last-child span {
 }
 .media {
     background-color: #fdfdfd;
-    /* padding: 15px; */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

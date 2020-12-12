@@ -37,7 +37,7 @@ const Membership = () => {
                 </div>
                 <div className="first-list mt-3">
                   <h4 className="title">
-                    <i class="nc-icon nc-single-copy-04 mr-3 custom-color"></i>
+                    <i className="nc-icon nc-single-copy-04 mr-3 custom-color"></i>
                     Associates
                   </h4>
                   <h5 className="description ml-5">

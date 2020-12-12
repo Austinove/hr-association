@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
@@ -9,6 +9,7 @@ import {
   ListGroup,
   ListGroupItem,
 } from "reactstrap";
+import { connect } from "react-redux";
 import knowledge from "assets/img/logo/knowledge.png";
 import target from "assets/img/logo/target.png";
 import change from "assets/img/logo/change-2.png";
@@ -18,10 +19,12 @@ import PageHeader from "components/Headers";
 import CardTitle from "reactstrap/lib/CardTitle";
 import CardBody from "reactstrap/lib/CardBody";
 import Card from "reactstrap/lib/Card";
+import { fetch_homeData } from "../../actions/homeAction";
 
 function HomePage() {
   document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
+  useEffect(() => {
+    fetch_homeData();
     document.body.classList.add("profile-page");
     return function cleanup() {
       document.body.classList.remove("profile-page");
@@ -248,4 +251,8 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+const mapStateToProps = ({ HomeData }) => {
+  const { homeData, loading, homeError } = HomeData;
+  return { homeData, loading, homeError };
+};
+export default connect(mapStateToProps, { fetch_homeData })(HomePage);
