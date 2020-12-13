@@ -21,7 +21,7 @@ import CardBody from "reactstrap/lib/CardBody";
 import Card from "reactstrap/lib/Card";
 import { fetch_homeData } from "../../actions/homeAction";
 
-function HomePage() {
+function HomePage({ fetch_homeData }) {
   document.documentElement.classList.remove("nav-open");
   useEffect(() => {
     fetch_homeData();
@@ -29,7 +29,7 @@ function HomePage() {
     return function cleanup() {
       document.body.classList.remove("profile-page");
     };
-  });
+  }, []);
   return (
     <>
       <PageHeader />

@@ -1,26 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import {
   Container,
   Row,
   Col,
-  Media,
-  Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
-  NavLink,
-  NavItem,
 } from "reactstrap";
 import CustomHeader from "components/Headers/customHeader";
 import homeImage from "assets/img/logo/home-img.jpg";
+import { fetch_news } from "../../actions/newsAction";
 
-const News = () => {
+const News = ({ fetch_news, newsData, loading, newsError }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   onmouseenter = () => setDropdownOpen(true);
   onmouseleave = () => setDropdownOpen(false);
+  useEffect(() => {
+    fetch_news();
+    return function cleanup() {
+      // document.body.classList.remove("profile-page");
+    };
+  }, []);
   return (
     <>
       <div className="about-header" data-parallax={true} ref={CustomHeader}>
@@ -69,196 +73,36 @@ const News = () => {
               </Col>
             </Row>
             <Row>
-              <Col className="mx-auto mt-2" md="12">
-                <div class="media p-3">
-                  <img
-                    src={homeImage}
-                    height="200"
-                    className="mr-3 media-image"
-                    alt="News Image"
-                  />
-                  <div class="media-body">
-                    <a href="#" class="mt-2 news-link font-weight-bold">
-                      ras sit amet nibh libero, in gravida nulla. Nulla vel
-                    </a>
-                    <br />
-                    <span className="font-12">
-                      <strong>Category</strong>: Updates
-                    </span>
-                    <p className="mt-4">
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                      metus scelerisque ante sollicitudin. Cras purus odio,
-                      vestibulum in vulputate at, tempus viverra turpis. Fusce
-                      condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus. Cras sit amet nibh
-                      libero, in gravida nulla. Nulla vel metus scelerisque ante
-                      sollicitudin. Cras purus odio, vestibulum in vulputate at,
-                      tempus viverra turpis. Fusce condimentum nunc ac nisi
-                      vulputate fringilla. Donec lacinia congue felis in
-                      faucibus. Cras sit amet nibh libero, in gravida nulla.
-                      Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                      odio, vestibulum in vulputate at, tempus viverra turpis.
-                      Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus.
-                    </p>
-                    <span className="font-12 float-right mt-4">
-                      December 02, 2020
-                    </span>
-                  </div>
-                </div>
-              </Col>
-              <Col className="mx-auto mt-2" md="12">
-                <div class="media p-3">
-                  <img
-                    src={homeImage}
-                    height="200"
-                    className="mr-3 media-image"
-                    alt="News Image"
-                  />
-                  <div class="media-body">
-                    <a href="#" class="mt-2 news-link font-weight-bold">
-                      ras sit amet nibh libero, in gravida nulla. Nulla vel
-                    </a>
-                    <br />
-                    <span className="font-12">
-                      <strong>Category</strong>: Updates
-                    </span>
-                    <p className="mt-4">
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                      metus scelerisque ante sollicitudin. Cras purus odio,
-                      vestibulum in vulputate at, tempus viverra turpis. Fusce
-                      condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus. Cras sit amet nibh
-                      libero, in gravida nulla. Nulla vel metus scelerisque ante
-                      sollicitudin. Cras purus odio, vestibulum in vulputate at,
-                      tempus viverra turpis. Fusce condimentum nunc ac nisi
-                      vulputate fringilla. Donec lacinia congue felis in
-                      faucibus. Cras sit amet nibh libero, in gravida nulla.
-                      Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                      odio, vestibulum in vulputate at, tempus viverra turpis.
-                      Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus.
-                    </p>
-                    <span className="font-12 float-right mt-4">
-                      December 02, 2020
-                    </span>
-                  </div>
-                </div>
-              </Col>
-              <Col className="mx-auto mt-2" md="12">
-                <div class="media p-3">
-                  <img
-                    src={homeImage}
-                    height="200"
-                    className="mr-3 media-image"
-                    alt="News Image"
-                  />
-                  <div class="media-body">
-                    <a href="#" class="mt-2 news-link font-weight-bold">
-                      ras sit amet nibh libero, in gravida nulla. Nulla vel
-                    </a>
-                    <br />
-                    <span className="font-12">
-                      <strong>Category</strong>: Updates
-                    </span>
-                    <p className="mt-4">
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                      metus scelerisque ante sollicitudin. Cras purus odio,
-                      vestibulum in vulputate at, tempus viverra turpis. Fusce
-                      condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus. Cras sit amet nibh
-                      libero, in gravida nulla. Nulla vel metus scelerisque ante
-                      sollicitudin. Cras purus odio, vestibulum in vulputate at,
-                      tempus viverra turpis. Fusce condimentum nunc ac nisi
-                      vulputate fringilla. Donec lacinia congue felis in
-                      faucibus. Cras sit amet nibh libero, in gravida nulla.
-                      Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                      odio, vestibulum in vulputate at, tempus viverra turpis.
-                      Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus.
-                    </p>
-                    <span className="font-12 float-right mt-4">
-                      December 02, 2020
-                    </span>
-                  </div>
-                </div>
-              </Col>
-              <Col className="mx-auto mt-2" md="12">
-                <div class="media p-3">
-                  <img
-                    src={homeImage}
-                    height="200"
-                    className="mr-3 media-image"
-                    alt="News Image"
-                  />
-                  <div class="media-body">
-                    <a href="#" class="mt-2 news-link font-weight-bold">
-                      ras sit amet nibh libero, in gravida nulla. Nulla vel
-                    </a>
-                    <br />
-                    <span className="font-12">
-                      <strong>Category</strong>: Updates
-                    </span>
-                    <p className="mt-4">
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                      metus scelerisque ante sollicitudin. Cras purus odio,
-                      vestibulum in vulputate at, tempus viverra turpis. Fusce
-                      condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus. Cras sit amet nibh
-                      libero, in gravida nulla. Nulla vel metus scelerisque ante
-                      sollicitudin. Cras purus odio, vestibulum in vulputate at,
-                      tempus viverra turpis. Fusce condimentum nunc ac nisi
-                      vulputate fringilla. Donec lacinia congue felis in
-                      faucibus. Cras sit amet nibh libero, in gravida nulla.
-                      Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                      odio, vestibulum in vulputate at, tempus viverra turpis.
-                      Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus.
-                    </p>
-                    <span className="font-12 float-right mt-4">
-                      December 02, 2020
-                    </span>
-                  </div>
-                </div>
-              </Col>
-              <Col className="mx-auto mt-2" md="12">
-                <div class="media p-3">
-                  <img
-                    src={homeImage}
-                    height="200"
-                    className="mr-3 media-image"
-                    alt="News Image"
-                  />
-                  <div class="media-body">
-                    <a href="#" class="mt-2 news-link font-weight-bold">
-                      ras sit amet nibh libero, in gravida nulla. Nulla vel
-                    </a>
-                    <br />
-                    <span className="font-12">
-                      <strong>Category</strong>: Updates
-                    </span>
-                    <p className="mt-4">
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                      metus scelerisque ante sollicitudin. Cras purus odio,
-                      vestibulum in vulputate at, tempus viverra turpis. Fusce
-                      condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus. Cras sit amet nibh
-                      libero, in gravida nulla. Nulla vel metus scelerisque ante
-                      sollicitudin. Cras purus odio, vestibulum in vulputate at,
-                      tempus viverra turpis. Fusce condimentum nunc ac nisi
-                      vulputate fringilla. Donec lacinia congue felis in
-                      faucibus. Cras sit amet nibh libero, in gravida nulla.
-                      Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                      odio, vestibulum in vulputate at, tempus viverra turpis.
-                      Fusce condimentum nunc ac nisi vulputate fringilla. Donec
-                      lacinia congue felis in faucibus.
-                    </p>
-                    <span className="font-12 float-right mt-4">
-                      December 02, 2020
-                    </span>
-                  </div>
-                </div>
-              </Col>
+              {newsData.data
+                ? newsData.data.map((news, index) => (
+                    <Col className="mx-auto mt-2" md={12} key={index}>
+                      <div className="media p-3">
+                        <img
+                          src={homeImage}
+                          height="200"
+                          className="mr-3 media-image"
+                          alt="News Image"
+                        />
+                        <div className="media-body">
+                          <a
+                            tag={Link}
+                            to="/"
+                            className="mt-2 news-link font-weight-bold">
+                            {news.newsTitle}
+                          </a>
+                          <br />
+                          <span className="font-12">
+                            <strong>Category</strong>: {news.newsCategory}
+                          </span>
+                          <p className="mt-4">{news.newsDesc}</p>
+                          <span className="font-12 float-right mt-4">
+                            {news.created_at.split("T")[0]}
+                          </span>
+                        </div>
+                      </div>
+                    </Col>
+                  ))
+                : ""}
             </Row>
           </Container>
         </div>
@@ -267,4 +111,8 @@ const News = () => {
   );
 };
 
-export default News;
+const mapStateToProps = ({ News }) => {
+  const { newsData, loading, newsError } = News;
+  return { newsData, loading, newsError };
+};
+export default connect(mapStateToProps, { fetch_news })(News);

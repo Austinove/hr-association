@@ -8,6 +8,7 @@ const actionLoad = () => {
 };
 
 export const fetch_homeData = () => {
+  console.log("running");
   return (dispatch) => {
     dispatch(actionLoad());
 

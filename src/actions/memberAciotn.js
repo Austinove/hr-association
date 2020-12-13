@@ -7,14 +7,13 @@ const actionLoad = () => {
   };
 };
 
-export const register_member = () => {
+export const register_member = (member_number) => {
   return (dispatch) => {
     dispatch(actionLoad());
 
     return api
-      .register_member()
+      .register_member(member_data)
       .then((response) => {
-        console.log(response);
         dispatch({
           type: memberRegister.register_member_success,
           payload: response.data,
@@ -30,10 +29,8 @@ export const register_member = () => {
 };
 
 export const selected_member = (selectedValue) => {
-  return (dispatch) => {
-    dispatch({
-      type: memberRegister.selected_membership,
-      payload: selectedValue,
-    });
+  return {
+    type: memberRegister.selected_membership,
+    payload: selectedValue,
   };
 };

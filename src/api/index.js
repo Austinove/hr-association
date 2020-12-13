@@ -13,7 +13,7 @@ export default {
   fetch_knowledge: () =>
     apiInstance({
       method: "GET",
-      url: "/knowldgehub",
+      url: "/allknowledgehub",
     }),
   //homepage api
   fetch_homeData: () =>

@@ -18,7 +18,7 @@ const PartA = () => {
           <Row className="mt-2">
             <Col>
               <FormGroup>
-                <Label className="font-weight-bold" Htmlfor="surname">
+                <Label className="font-weight-bold" for="surname">
                   SurName
                 </Label>
                 <span className="text-danger font-12 ml-2">*</span>

@@ -14,7 +14,6 @@ export const fetch_knowledge = () => {
     return api
       .fetch_knowledge()
       .then((response) => {
-        console.log(response);
         dispatch({
           type: knowledgeConstants.fetch_knowledge_success,
           payload: response.data,

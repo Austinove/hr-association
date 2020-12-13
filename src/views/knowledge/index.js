@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import {
   Container,
   Row,
@@ -13,7 +14,16 @@ import {
   Button,
 } from "reactstrap";
 import CustomHeader from "components/Headers/customHeader";
-const Knowledge = () => {
+import { fetch_knowledge } from "../../actions/knowledgeAction";
+const Knowledge = ({
+  fetch_knowledge,
+  knowledgeData,
+  loading,
+  knowledgeError,
+}) => {
+  useEffect(() => {
+    fetch_knowledge();
+  }, []);
   return (
     <>
       <div className="about-header" data-parallax={true} ref={CustomHeader}>
@@ -99,208 +109,32 @@ const Knowledge = () => {
                   </Col>
                 </Row>
                 <Row className="publication-container">
-                  <Col className="mx-auto" md="12">
-                    <Media>
-                      <Media body className="p-2 mb-4">
-                        <Media
-                          heading
-                          className="text-uppercase font-14 font-weight-bold">
-                          Media heading Cras sit amet nibh libero, in gravida
-                          nulla.
-                        </Media>
-                        <span>Hi,</span>
-                        <p className="font-14">
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
-                        <Button
-                          color="warning"
-                          className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
-                          outline>
-                          <i className="fa fa-download" aria-hidden="true"></i>{" "}
-                          Download Document
-                        </Button>
-                      </Media>
-                    </Media>
-                  </Col>
-                  <Col className="mx-auto" md="12">
-                    <Media>
-                      <Media body className="p-2 mb-4">
-                        <Media
-                          heading
-                          className="text-uppercase font-14 font-weight-bold">
-                          Media heading Cras sit amet nibh libero, in gravida
-                          nulla.
-                        </Media>
-                        <span>Hi,</span>
-                        <p className="font-14">
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
-                        <Button
-                          color="warning"
-                          className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
-                          outline>
-                          <i className="fa fa-download" aria-hidden="true"></i>{" "}
-                          Download Document
-                        </Button>
-                      </Media>
-                    </Media>
-                  </Col>
-                  <Col className="mx-auto" md="12">
-                    <Media>
-                      <Media body className="p-2 mb-4">
-                        <Media
-                          heading
-                          className="text-uppercase font-14 font-weight-bold">
-                          Media heading Cras sit amet nibh libero, in gravida
-                          nulla.
-                        </Media>
-                        <span>Hi,</span>
-                        <p className="font-14">
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
-                        <Button
-                          color="warning"
-                          className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
-                          outline>
-                          <i className="fa fa-download" aria-hidden="true"></i>{" "}
-                          Download Document
-                        </Button>
-                      </Media>
-                    </Media>
-                  </Col>
-                  <Col className="mx-auto" md="12">
-                    <Media>
-                      <Media body className="p-2 mb-4">
-                        <Media
-                          heading
-                          className="text-uppercase font-14 font-weight-bold">
-                          Media heading Cras sit amet nibh libero, in gravida
-                          nulla.
-                        </Media>
-                        <span>Hi,</span>
-                        <p className="font-14">
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
-                        <Button
-                          color="warning"
-                          className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
-                          outline>
-                          <i className="fa fa-download" aria-hidden="true"></i>{" "}
-                          Download Document
-                        </Button>
-                      </Media>
-                    </Media>
-                  </Col>
-                  <Col className="mx-auto" md="12">
-                    <Media>
-                      <Media body className="p-2 mb-4">
-                        <Media
-                          heading
-                          className="text-uppercase font-14 font-weight-bold">
-                          Media heading Cras sit amet nibh libero, in gravida
-                          nulla.
-                        </Media>
-                        <span>Hi,</span>
-                        <p className="font-14">
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
-                        <Button
-                          color="warning"
-                          className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
-                          outline>
-                          <i className="fa fa-download" aria-hidden="true"></i>{" "}
-                          Download Document
-                        </Button>
-                      </Media>
-                    </Media>
-                  </Col>
-                  <Col className="mx-auto" md="12">
-                    <Media>
-                      <Media body className="p-2 mb-4">
-                        <Media
-                          heading
-                          className="text-uppercase font-14 font-weight-bold">
-                          Media heading Cras sit amet nibh libero, in gravida
-                          nulla.
-                        </Media>
-                        <span>Hi,</span>
-                        <p className="font-14">
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                          metus scelerisque ante sollicitudin commodo. Cras
-                          purus odio, vestibulum in vulputate at, tempus viverra
-                          turpis. Fusce condimentum nunc ac nisi vulputate
-                          fringilla. Donec lacinia congue felis in faucibus.
-                        </p>
-                        <Button
-                          color="warning"
-                          className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
-                          outline>
-                          <i className="fa fa-download" aria-hidden="true"></i>{" "}
-                          Download Document
-                        </Button>
-                      </Media>
-                    </Media>
-                  </Col>
+                  {knowledgeData
+                    ? knowledgeData.data.map((knowledge, index) => (
+                        <Col className="mx-auto" md="12" key={index}>
+                          <Media>
+                            <Media body className="p-2 mb-4">
+                              <Media
+                                heading
+                                className="text-uppercase font-14 font-weight-bold">
+                                {knowledge.title}
+                              </Media>
+                              <span>Hello,</span>
+                              <p className="font-14">{knowledge.description}</p>
+                              <Button
+                                color="warning"
+                                className="btn-sm btn-round text-capitalize font-weight-normal font-13 mt-2"
+                                outline>
+                                <i
+                                  className="fa fa-download"
+                                  aria-hidden="true"></i>{" "}
+                                Download Document
+                              </Button>
+                            </Media>
+                          </Media>
+                        </Col>
+                      ))
+                    : null}
                 </Row>
               </Col>
               <Col md={4}>
@@ -315,7 +149,7 @@ const Knowledge = () => {
                   </span>
                   <form className="p-2 mt-2 mb-5">
                     <FormGroup>
-                      <Label className="text-white" Htmlfor="firstName">
+                      <Label className="text-white" for="firstName">
                         First Name<span className="warning">*</span>
                       </Label>
                       <Input
@@ -326,7 +160,7 @@ const Knowledge = () => {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label className="text-white" Htmlfor="lastName">
+                      <Label className="text-white" for="lastName">
                         Last Name <span className="warning">*</span>
                       </Label>
                       <Input
@@ -337,7 +171,7 @@ const Knowledge = () => {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label className="text-white" Htmlfor="exampleEmail">
+                      <Label className="text-white" for="exampleEmail">
                         Email address <span className="warning">*</span>
                       </Label>
                       <Input
@@ -348,7 +182,7 @@ const Knowledge = () => {
                       />
                     </FormGroup>
                     <FormGroup>
-                      <Label className="text-white" Htmlfor="phone">
+                      <Label className="text-white" for="phone">
                         Phone <span className="warning">*</span>
                       </Label>
                       <Input
@@ -376,4 +210,12 @@ const Knowledge = () => {
   );
 };
 
-export default Knowledge;
+const mapStateToProps = ({ Knowledge }) => {
+  const { knowledgeData, loading, knowledgeError } = Knowledge;
+  return {
+    knowledgeData,
+    loading,
+    knowledgeError,
+  };
+};
+export default connect(mapStateToProps, { fetch_knowledge })(Knowledge);

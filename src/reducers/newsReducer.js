@@ -12,7 +12,7 @@ export function newsReducer(state = initialState, action) {
       return {
         ...state,
         loading: "",
-        homeData: action.payload,
+        newsData: action.payload,
       };
     case newsConstants.fetch_news_fail:
       return {

@@ -14,7 +14,6 @@ export const fetch_news = () => {
     return api
       .fetch_news()
       .then((response) => {
-        console.log(response);
         dispatch({
           type: newsConstants.fetch_news_success,
           payload: response.data,
