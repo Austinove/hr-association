@@ -47,4 +47,11 @@ export default {
       url: "/news",
       data: filterVariable,
     }),
+  //Knowledge Subscription
+  knowledgeSubscribe: (subData) =>
+    apiInstance({
+      method: "POST",
+      url: "/knowledgeSub",
+      data: subData,
+    }),
 };

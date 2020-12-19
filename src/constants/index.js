@@ -45,3 +45,38 @@ export const leadershipConstants = {
   fetch_leadership_success: "fetch_leadership_request_successfull",
   fetch_leadership_fail: "fetch_leadership_request_failure",
 };
+
+export const studentsForms = {
+  submiting: "action_loading",
+  submit_student: "submit_student_request",
+  submit_student_fail: "submit_student_request_fail",
+  submit_student_success: "submit_student_request_success",
+};
+
+export const proffessionalForms = {
+  submiting: "action_loading",
+  submit_proffessional: "submit_proffessional_request",
+  submit_proffessional_fail: "submit_proffessional_request_fail",
+  submit_proffessional_success: "submit_proffessional_request_success",
+};
+
+export const retiredForms = {
+  submiting: "action_loading",
+  submit_retired: "submit_retired_request",
+  submit_retired_fail: "submit_retired_request_fail",
+  submit_retired_success: "submit_retired_request_success",
+};
+
+export const coporateForms = {
+  submiting: "action_loading",
+  submit_coporate: "submit_coporate_request",
+  submit_coporate_fail: "submit_coporate_request_fail",
+  submit_coporate_success: "submit_coporate_request_success",
+};
+
+export const knowledgeSubscription = {
+  submiting: "action_loading",
+  submit_subscription: "submit_subscription_request",
+  submit_subscription_fail: "submit_subscription_request_fail",
+  submit_subscription_success: "submit_subscription_request_success",
+};

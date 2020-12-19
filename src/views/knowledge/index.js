@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Formik } from "formik";
+import * as Yup from "yup";
 import {
   Container,
   Row,
@@ -147,59 +149,166 @@ const Knowledge = ({
                     your publication, we would like to add it to the knowledge
                     hub.
                   </span>
-                  <form className="p-2 mt-2 mb-5">
-                    <FormGroup>
-                      <Label className="text-white" for="firstName">
-                        First Name<span className="warning">*</span>
-                      </Label>
-                      <Input
-                        type="text"
-                        className="Knowledge-inputs"
-                        name="firstName"
-                        id="firstName"
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <Label className="text-white" for="lastName">
-                        Last Name <span className="warning">*</span>
-                      </Label>
-                      <Input
-                        type="text"
-                        className="Knowledge-inputs"
-                        name="lastName"
-                        id="lastName"
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <Label className="text-white" for="exampleEmail">
-                        Email address <span className="warning">*</span>
-                      </Label>
-                      <Input
-                        className="Knowledge-inputs"
-                        type="email"
-                        name="email"
-                        id="exampleEmail"
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <Label className="text-white" for="phone">
-                        Phone <span className="warning">*</span>
-                      </Label>
-                      <Input
-                        type="text"
-                        className="Knowledge-inputs"
-                        name="phone"
-                        id="phone"
-                      />
-                    </FormGroup>
-                    <Button
-                      color="default"
-                      outline
-                      className="btn-sm font-12 float-right text-white font-weight-normal text-capitalize"
-                      type="submit">
-                      Submit
-                    </Button>
-                  </form>
+                  <Formik
+                    initialValues={{
+                      email: "",
+                      surname: "",
+                      otherName: "",
+                      sex: "",
+                      DOB: "",
+                      Nationality: "",
+                      fax: "",
+                      telephone: "",
+                      interest: "",
+                      title: "",
+                      experience: "",
+                      qualification: "",
+                      instituteName: "",
+                      firstName: "",
+                    }}
+                    validationSchema={Yup.object({
+                      firstName: Yup.string()
+                        .min(2, "Too Short!")
+                        .max(20, "Too Long!")
+                        .required("Enter your firstName"),
+                      lastName: Yup.string()
+                        .min(2, "Too Short!")
+                        .max(20, "Too Long!")
+                        .required("Enter your lastName"),
+                      phoneNumber: Yup.number()
+                        .min(10, "Too Short!")
+                        .required("Enter your phoneNumber"),
+                      email: Yup.string()
+                        .email("Invalid email")
+                        .required("Enter your email"),
+                    })}
+                    onSubmit={(values, { setSubmitting }) => {
+                      setTimeout(() => {
+                        console.log(values);
+                        // register_user_request(values);
+                      }, 400);
+                    }}>
+                    {({
+                      values,
+                      errors,
+                      touched,
+                      handleChange,
+                      handleBlur,
+                      handleSubmit,
+                      isSubmitting,
+                    }) => (
+                      <form className="p-2 mt-2 mb-5">
+                        <FormGroup>
+                          <Label className="text-white" for="firstName">
+                            First Name<span className="warning">*</span>
+                          </Label>
+                          <Input
+                            type="text"
+                            className="Knowledge-inputs"
+                            name="firstName"
+                            id="firstName"
+                            required
+                            value={values.firstName}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={
+                              touched.firstName && errors.firstName
+                                ? "Knowledge-inputs errorInput"
+                                : "Knowledge-inputs"
+                            }
+                          />
+                          {touched.firstName && errors.firstName ? (
+                            <div className="text-danger mt-1 font-12">
+                              {errors.firstName}
+                            </div>
+                          ) : null}
+                        </FormGroup>
+                        <FormGroup>
+                          <Label className="text-white" for="lastName">
+                            Last Name <span className="warning">*</span>
+                          </Label>
+                          <Input
+                            type="text"
+                            className="Knowledge-inputs"
+                            name="lastName"
+                            id="lastName"
+                            required
+                            value={values.lastName}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={
+                              touched.lastName && errors.lastName
+                                ? "Knowledge-inputs errorInput"
+                                : "Knowledge-inputs"
+                            }
+                          />
+                          {touched.lastName && errors.lastName ? (
+                            <div className="text-danger mt-1 font-12">
+                              {errors.lastName}
+                            </div>
+                          ) : null}
+                        </FormGroup>
+                        <FormGroup>
+                          <Label className="text-white" for="exampleEmail">
+                            Email address <span className="warning">*</span>
+                          </Label>
+                          <Input
+                            className="Knowledge-inputs"
+                            type="email"
+                            name="email"
+                            id="exampleEmail"
+                            required
+                            value={values.email}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={
+                              touched.email && errors.email
+                                ? "Knowledge-inputs errorInput"
+                                : "Knowledge-inputs"
+                            }
+                          />
+                          {touched.email && errors.email ? (
+                            <div className="text-danger mt-1 font-12">
+                              {errors.email}
+                            </div>
+                          ) : null}
+                        </FormGroup>
+                        <FormGroup>
+                          <Label className="text-white" for="phone">
+                            Phone <span className="warning">*</span>
+                          </Label>
+                          <Input
+                            type="number"
+                            className="Knowledge-inputs"
+                            name="phone"
+                            id="phone"
+                            required
+                            value={values.phoneNumber}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={
+                              touched.phoneNumber && errors.phoneNumber
+                                ? "Knowledge-inputs errorInput"
+                                : "Knowledge-inputs"
+                            }
+                          />
+                          {touched.phoneNumber && errors.phoneNumber ? (
+                            <div className="text-danger mt-1 font-12">
+                              {errors.phoneNumber}
+                            </div>
+                          ) : null}
+                        </FormGroup>
+                        <Button
+                          type="submit"
+                          color="default"
+                          outline
+                          className="btn-sm font-12 float-right text-white font-weight-normal text-capitalize"
+                          type="submit">
+                          Submit
+                        </Button>
+                      </form>
+                    )}
+                  </Formik>
                 </Container>
               </Col>
             </Row>

@@ -5,6 +5,10 @@ import { knowledgeReducer } from "./knowledgeReducer";
 import { leadershipReducer } from "./leadershipReducer";
 import { memberReducer } from "./memberReducer";
 import { newsReducer } from "./newsReducer";
+import { studentReducer } from "./studentReducer";
+import { proffesionalReducer } from "./proffesionalRedicer";
+import { retiredReducer } from "./retiredReducer";
+import { coporateReducer } from "./coporateReducer";
 
 export default (history) =>
   combineReducers({
@@ -14,4 +18,8 @@ export default (history) =>
     Leadership: leadershipReducer,
     Member: memberReducer,
     News: newsReducer,
+    student: studentReducer,
+    proffesional: proffesionalReducer,
+    retired: retiredReducer,
+    coporate: coporateReducer,
   });

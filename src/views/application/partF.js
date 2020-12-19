@@ -1,7 +1,7 @@
 import React from "react";
-
+import { Formik } from "formik";
+import * as Yup from "yup";
 import { FormGroup, Label, Input, Button, Col, Row } from "reactstrap";
-
 const PartF = () => {
   return (
     <form>
@@ -24,7 +24,7 @@ const PartF = () => {
               </span>
             </Label>
             <Button
-              color="success"
+              color="warning"
               className="btn-sm mt-4 text-capitalize"
               outline>
               Click to Register{" "}

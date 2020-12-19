@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { connect } from "react-redux";
 import {
   FormGroup,
   Label,
@@ -12,7 +13,9 @@ import {
   Button,
 } from "reactstrap";
 
-const PartD = () => {
+import { submit_coporate } from "../../actions/coporateAction";
+
+const Coporate = () => {
   return (
     <Formik
       initialValues={{
@@ -573,6 +576,15 @@ const PartD = () => {
                           </tbody>
                         </Table>
                       </Row>
+                      <Label check>
+                        <Input type="checkbox" /> I confirm that the information
+                        I have provided is a representation of all my/our
+                        personal, academic, professional, organizational
+                        profile.
+                        <span className="form-check-sign">
+                          <span className="check"></span>
+                        </span>
+                      </Label>
                     </Row>
                   </form>
                 )}
@@ -594,4 +606,8 @@ const PartD = () => {
   );
 };
 
-export default PartD;
+const mapStateToProps = ({ coporate }) => {
+  const { userData, loading, submitError } = coporate;
+  return { userData, loading, submitError };
+};
+export default connect(mapStateToProps, { submit_coporate })(Coporate);
